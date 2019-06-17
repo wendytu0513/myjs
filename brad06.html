@@ -1,0 +1,22 @@
+<script>
+function dosomthing(){
+let year = document.getElementById("yaer").value
+year = parseInt(year);
+if ( year % 4 == 0 ){
+    if ( year % 100 == 0 ){
+        if ( year % 400 == 0 ){isOK = true}
+        else{isOK = false}
+        }
+        else{isOK = true}
+        }
+        else{isOK = false}
+
+    document.getElementById('result' + isOK?)
+}
+
+</script>
+
+
+<input type="number" id="year" />
+<input type="button" id="判斷" onclick="dosomthing()"/>
+<span id="result"></span>
