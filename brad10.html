@@ -1,0 +1,75 @@
+<script>
+let a = 10;
+switch (a){
+    case 1:
+        document.write("A");
+        break;
+    case 10:
+        document.write("B");
+        break;
+    case 100:
+        document.write("C");
+        break;
+    default:
+        document.write("D");
+}
+document.write("<br>game over<br>")
+
+
+//case條件含變數
+let a1 = 10 , b1 = 10;
+switch (a1){
+    case 1:
+        document.write("A");
+        break;
+    case b1:
+        document.write("B");
+        break;
+    case 100:
+        document.write("C");
+        break;
+    default:
+        document.write("D");
+}
+document.write("<br>game over<br>")
+
+
+//沒有break敘述句---會繼續向下判斷並顯示結果直到break
+let a2 = 10 , b2 = 10;
+switch (a1){
+    case 1:
+        document.write("A");
+        break;
+    case b2:
+        document.write("B");
+        //break;
+    case 100:
+        document.write("C");
+        break;
+    default:
+        document.write("D");
+}
+document.write("<br>game over<br>")
+
+
+//多個case
+let month = parseInt(Math.random()*12)+1;
+document.write(month + "月");
+switch (month){
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+        document.write("31天");
+        break;
+    case 2:
+        document.write("28天");
+        break;
+    default:
+        document.write("30天");
+}
+document.write("<br>month<br>")
+</script>

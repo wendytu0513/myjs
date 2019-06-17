@@ -1,0 +1,40 @@
+<script>
+//for --- 初始化;條件;收尾
+
+//區域變數---i只在上面的迴圈宣告,故下方不會有結果
+for ( let i = 0; i < 10;i++){
+    document.write(i + "<br>")
+}
+
+document.write("<hr>");
+//document.write(i);
+
+
+//
+let j = 0
+for ( let j = 0; j < 10; j++){
+    document.write(j + "<br>")
+}
+
+document.write("<hr>");
+document.write(j);
+
+
+
+
+//
+function myinit(){
+    document.write("Hello Brad");
+}
+function drawline(){
+    document.write("hr");
+}
+let k = 0;
+for (myinit() ; k < 10 ; drawline() ) {
+    document.write(k++ + "<br>");
+}
+
+document.write("<hr>");
+document.write(k);
+
+</script>
