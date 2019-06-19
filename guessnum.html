@@ -1,0 +1,50 @@
+<script src="number.js"></script>
+<script>
+    let answer = createAnswer(3);
+    //console.log(answer);
+    let log = '';
+    let times =0;
+    function doguess() {
+        times++;
+        let guess = document.getElementById('guess').value;
+        let result = checkAB(answer, guess);
+
+        if (result == 3 + "A0B") {
+            alert('winner');
+            reset();
+        } else if (times == 10) {
+            alert('loser: answer is ' + answer);
+            reset();
+        } else {
+            alert(result);
+
+        }
+
+        log += guess + " => " + result + "<br>";
+        document.getElementById('log').innerHTML = log;
+        document.getElementById('guess').value = '';
+        document.getElementById('guess').focus;
+
+    }
+
+    function reset() {
+        if (!confirm('reset?')) return;
+
+        answer = createAnswer(3);
+        log = '';
+        document.getElementById('log').innerHTML = log;
+        document.getElementById('guess').value = '';
+        document.getElementById('guess').focus;
+    }
+
+</script>
+
+
+
+
+<h1>Guess Number Game</h1>
+<input type="number" id="guess" />
+<input type="button" onclick="doguess()" value="guess" />
+<input type="button" onclick="reset()" value="reset" />
+<hr>
+<div id='log'></div>
