@@ -1,0 +1,41 @@
+<script>
+function sayya2(name = "world") {
+    document.write(`ya! ${name}<br>`);
+}
+
+
+function sayya(ns) {
+    for (let name of ns ){
+     document.write(`ya! ${name}<br>`)
+    }
+}
+
+
+function sayya3(...names){
+    //document.write(typeof names + Array.isArray(names) + "<br>");
+    for (let name of names ){
+     document.write(`ya! ${name}<br>`)
+    }
+}
+
+
+
+//------//
+let names = ['brad','eric','tony'];
+sayya(names);
+sayya2();
+sayya2('brad');
+
+sayya3();
+sayya3('A');
+
+let f1 = function(x,y){
+    return 2*x+y;
+}
+
+
+let v1 = f1(2 ,3);
+document.write(v1);
+
+
+</script>
