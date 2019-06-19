@@ -1,0 +1,19 @@
+<h1>數字轉換</h1>
+<input type="number" id="num">
+<input type="button" onclick="change()" value="Change">
+<span id="a"></span>
+
+
+<script>
+    function change() {
+        let num = document.getElementById("num").value;
+        let word = ["壹", "貳", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
+        let p = "";
+        for (let j = 0; j < num.length; j++) {
+            c = parseInt(num.substr(j, 1));
+            p = p + word[(c - 1)];
+        }
+        document.getElementById("a").innerHTML = `${p}`;
+
+    }
+</script>
