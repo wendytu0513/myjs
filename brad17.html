@@ -1,0 +1,27 @@
+<script>
+//a b兩數交換
+//法1    
+let a = 10 ,b = 3;
+let c = a
+a = b ;
+b = c;
+document.write(`${a} ${b} <br>`);
+
+
+//法2
+let a1 = 10 , b1= 3;
+a1 = a1 + b1;
+b1 = a1 - b1;
+a1 = a1 - b1;
+document.write(`${a1} ${b1} <br>`);
+
+//法3--java
+let a2 = 10 , b2= 3;
+[a2 ,b2] = [b2 , a2];
+document.write(`${a2} ${b2} <br>`);
+
+
+let a3 = 1, b3 = 2, c3 = 3;
+[a3,b3,c3]=[c3,b3,a3]
+document.write(`${a3} ${b3} ${c3} <br>`);
+</script>
