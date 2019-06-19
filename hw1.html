@@ -1,0 +1,33 @@
+<table border="1" width="100%" style="border-collapse: collapse" height="80%">
+    1~100內質數
+    <hr>
+
+    <script src="hw1.js"></script>
+    <script>
+        let column = 10;
+        let row = 10;
+        let start = 1;
+    
+        for (let j = 0; j < column; j++) {    //控制直行數 1 11 21 31...
+            document.write("<tr>");
+
+            //劃出1~100
+            for (let i = start; i < (row + start); i++) {    //控制橫列數  1 2 3 4...
+                let num = parseInt( i + (j * row) );
+
+                let reslut = checknum(num);
+                if (reslut == false){
+                    document.write(`<td> ${num} </td>`);
+                }else{
+                    document.write(`<td bgcolor = "pink"> ${num} </td>`);
+                }
+                
+            }
+
+
+            document.write("</tr>");
+        }
+    </script>
+
+
+</table>
