@@ -1,0 +1,17 @@
+<input type="text" id="id" />
+<input type="button" onclick="ckid()" value='check' />
+
+<script src="brad23_1.js"></script>
+<script>
+//驗證身分證
+function ckid() {
+        let id = document.getElementById('id').value;
+        let isright = checktwid(id);
+        if (!isright) {
+            alert('XX');
+        } else {
+            alert('OK');
+        }
+    }
+</script>
+
