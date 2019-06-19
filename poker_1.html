@@ -1,0 +1,36 @@
+<script>
+    //撲克牌洗牌,不重複---do while
+    //先做再判斷g是否重作
+    let poker = [];
+    let rand;
+    let isrepeat;
+
+
+    for (let i = 0; i < 52; i++) {
+
+        do {
+        rand = parseInt(Math.random() * 52) //0~51
+        isrepeat = false;
+        for (let j = 0; j < i; j++) {
+            if (poker[j] == rand) {
+                //重複了
+                isrepeat = true;
+                break;
+            }
+        }
+
+        }while(isrepeat);
+        poker[i] = rand;
+
+
+
+       
+    }
+
+    for (let i in poker) {
+        document.write(poker[i] + "<br>")
+    }
+
+
+
+</script>
