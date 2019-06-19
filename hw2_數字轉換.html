@@ -8,12 +8,15 @@
     function change() {
         let num = document.getElementById("num").value;
         let word = ["壹", "貳", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
-        let p = "";
-        for (let j = 0; j < num.length; j++) {
+        let result = "";
+
+        for (let j = 0; j < num.length ; j++) {
             c = parseInt(num.substr(j, 1));
-            p = p + word[(c - 1)];
+            result += word[(c - 1)];
         }
-        document.getElementById("a").innerHTML = `${p}`;
+        document.getElementById("a").innerHTML = `${result}`;
 
     }
+
+
 </script>
