@@ -1,0 +1,27 @@
+<script>
+//while 迴圈練習1
+
+let i = 0;
+while ( i<10 ){
+//若用下方標註語法,則會進入無窮迴圈
+//document.write(i + "<br>");
+document.write(i++ + "<br>");
+}
+document.write("ex1" + "<hr>")
+</script>
+
+
+
+<script>
+//迴圈練習2--數字累加
+
+function calcsum(){
+  let n = document.getElementById("n").value;
+  let i = 1;
+  while (i <= n) sum += i++;
+}
+</script>
+1 + 2 + ... +
+<input type="number" id="n" />
+<input type="button" value="=" onclick="calcsum()" />
+<span id="result"></span>
