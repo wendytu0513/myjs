@@ -1,0 +1,27 @@
+<script>
+
+
+    let num = '123';
+    let word = ["壹", "貳", "叁", "肆", "伍", "陆", "柒", "捌", "玖"];
+    let p = "";
+
+    let leng = num.length;
+    let regex = /^[0-9]{leng}$/;
+    let mp = num.match(regex);
+    document.write(regex mp "<br>")
+
+
+
+    for (let j = 0; j < num.length; j++) {
+        c = parseInt(num.substr(j, 1));
+        document.write(c + typeof (c) + "<br>");
+        if (c = "NAN") document.write("test <br>");
+        p = p + word[(c - 1)];
+    }
+    document.write(p + "<br>");
+
+
+
+
+
+</script>
