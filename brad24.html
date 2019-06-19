@@ -1,0 +1,21 @@
+<script>
+    //時間週期
+    let counter = 0;
+    let timer;
+
+    function go() {
+        timer = setInterval(dothing, 1 * 1000);
+    }
+    function dothing() {
+        document.getElementById('counter').innerHTML = counter++;
+    }
+    function stoptimer() {
+        clearInterval(timer)
+    }
+
+
+</script>
+Timer : <span id='counter'></span>
+<hr>
+<input type="button" onclick="go()" value="go" />
+<input type="button" onclick="stoptimer()" value="stop" />
