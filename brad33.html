@@ -1,0 +1,72 @@
+<h1 id='head'></h1>
+<hr>
+<canvas id="canvas" width="400" height="320" style="border: 1px solid black"></canvas>
+<input type="button" onclick="clearcanvas()" value="clear">
+<input type="button" onclick="moveball()" value="move">
+
+
+
+<script>
+    //let head = document.createElement('head');  設為唯一值後可省略
+    head.innerHTML = 'brad big company';
+
+    //let ctx = canvas.getContext('2d');
+    // ctx.fillStyle = 'rgb(250,0,0)';
+    // ctx.fillRect(50, 50, 100, 120);
+
+    // ctx.fillStyle = 'rgb(250,255,0,0.5)';
+    // ctx.fillRect(70, 70, 200, 200);
+
+    // ctx.strokeStyle = 'rgb(0,0,255)';
+    // ctx.strokeRect(100, 100, 50, 50);
+
+
+    // ctx.beginPath();
+    // ctx.moveTo(75, 50);
+    // ctx.lineTo(100, 75);
+    // ctx.lineTo(100, 25);
+    // ctx.fill();
+
+    let ctx = canvas.getContext('2d');
+    let isdrag = false;
+    function clearcanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+
+
+
+
+    canvas.onmouseup = function (e) {
+        isdrag = false;
+    };
+
+    canvas.onmousedown = function (e) {
+        isdrag = true;
+        ctx.fillStyle = 'rgb(250,0,0)';
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX, e.offsetY);
+    };
+
+    canvas.onmousemove = function (e) {
+        if (isdrag)
+            //console.log(e.offsetX + "," + e.offsetY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+    };
+
+    let ball = new Image();
+    ball.src = "ball.png";
+    ball.onload = function () {
+        ctx.drawImage(ball, 10, 10);
+    }
+
+    function moveball() {
+        ctx.clearRect(10,10,48,48);
+        ctx.drawImage(ball, 0, 0);
+    }
+
+
+
+
+</script>

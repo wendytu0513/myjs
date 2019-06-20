@@ -1,0 +1,34 @@
+<input type="button" value="test" onclick="test1">
+
+
+<script>
+    function test1() {
+        let n = parseInt(Math.random() * 101);
+        document.write(n + "<br>");
+
+        try {
+            test2(n);
+            document.write("every thing is OK <br>");
+        } catch (e) {
+            document.write("nothing");
+            return;
+        } finally{
+            document.write("finally")
+        }
+
+        document.write("test here");
+    }
+
+
+
+
+    function test2(a) {
+        if (a >= 60) {
+            document.write("test2 OK <br>")
+        } else {
+            throw "error";
+        }
+    }
+
+
+</script>

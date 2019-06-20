@@ -1,0 +1,50 @@
+<script>
+//物件導向
+let bike = new Object();
+bike.speed = 12;
+bike.gear = 2;
+bike.upspeed = function(){
+    this.speed = this.speed * this.gear * 1.2;
+}
+bike.downspeed = function(){
+    this.speed = this.speed * 0.7;
+}
+
+document.write(bike.speed + "<br>");
+bike.upspeed();bike.upspeed();bike.upspeed();
+bike.downspeed();
+document.write(bike.speed + "<br>");
+
+let bike2 = {
+    speed : 4,
+    gear : 4,
+    upspeed: function(){
+        this.speed = this.speed * 1.4;
+    }
+};
+document.write(bike2.speed + "<br>");
+bike2.upspeed();bike2.upspeed();bike2.upspeed();
+document.write(bike2.speed + "<br>");
+
+
+bike2[`upspeed`](); //等同於bike2.upspeed()
+document.write(bike2.speed + "<br>");
+
+let method = 'upspeed';
+bike2[method]();
+document.write(bike2.speed + "<hr>");
+
+
+for (let key in bike2){
+    document.write(key +":" + bike2[key] + "<br>");
+}                             //叫出物件定義
+
+
+document.write("<hr>");
+var aa = 123; //全域變數:整個瀏覽器,下方window定義裡能找到aa:123
+let bb = 456;
+for (let key in window){  //window管理整個瀏覽器
+    document.write(key +":" + window[key] + "<br>");
+}  
+
+</script>

@@ -1,0 +1,27 @@
+<select name="textAlign" id="textAlign" onchange="chalign()">
+    <option value="">defult</option>
+    <option value="left">left</option>
+    <option value="right">right</option>
+    <option value="center">center</option>
+</select>
+<!-- <input type="button" value="fortest" onclick="test()"> -->
+<div id="mytext" style="text-align: center ">Hello,Word</div>
+
+
+<script>
+    // function test() {
+    //     let mytext = document.getElementById("mytext");
+    //     for (let key in mytext.style) {
+    //         console.log(key + ":" + mytext[key]);  //打開開發人員,可看到該物件的所有成員
+    //         //可往下繼續鑽研看其屬性
+    //     }
+    // }
+
+    function chalign(){
+        let mytext = document.getElementById("mytext");
+        let style = document.getElementById("textAlign");
+        mytext.style[style.name] = style.value;
+        console.log(mytext.style[style.name]);
+    }
+
+</script>

@@ -1,0 +1,45 @@
+<canvas id="canvas" width="480" height="320" style="border: 1px solid black"></canvas>
+<script>
+    let ctx = canvas.getContext('2d');
+    let ballx = 10, bally = 10;
+    let dx=4,dy=4;
+
+    let bg = new Image();
+    bg.src = 'bg.png';
+    let ball = new Image();
+
+
+    bg.onload = function () {
+        ctx.drawImage(bg, 0, 0);
+        ball.src = 'ball.png';
+        ball.onload = function () {
+            ctx.drawImage(ball, ballx, bally);
+        }
+    }
+
+
+    function refreshview() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(bg, 0, 0);
+        ctx.drawImage(ball, ballx, bally);
+    }
+
+    function go() {
+        if (ballx < 0 || ballx + 140 > canvas.width) {
+            dx *= -1;
+        }
+        if (bally < 0 || bally + 140 > canvas.height){
+            dy *= -1;
+        }
+
+        ballx += dx
+        bally += dy;
+    }
+
+    setInterval(refreshview, 30);
+    setInterval(go, 60);
+
+
+</script>
+
+<input type="button" onclick="go()" value="go">

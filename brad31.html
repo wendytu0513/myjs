@@ -1,0 +1,27 @@
+<script>
+//直接指定物件
+    let person = {
+        name: 'brad',
+        age: 18,
+        getinfo: function () {
+            return this.name + ":" + this.age;
+        }
+    };
+
+
+    let peter = {
+        name: 'peter',
+        age: 20
+    };
+
+
+    let tony = {
+        name: 'tony',
+        age: 28
+    };
+
+
+    document.write(person.getinfo.call(tony));
+    document.write(person.getinfo.call(peter));
+
+</script>
