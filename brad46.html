@@ -1,0 +1,55 @@
+<input type="button" onclick="test1()" value="test1">
+
+<script>
+    function test1() {
+        window.open("", "mywindow", "width=200", "height=100")
+    }
+    console.log(navigator.language)
+
+    function goback() {
+        let account = document.getElementById('account').value;
+        let pass1 = document.getElementById('pass1').value;
+        let pass2 = document.getElementById('pass2').value;
+        let twid = document.getElementById('twid').value;
+
+        let result = false
+
+        if (account.length >= 8) {
+
+        }
+
+
+
+
+        return false;
+    }
+
+
+
+
+    function checkpass() {
+        let pass1 = document.getElementById('pass1').value;
+        let pass2 = document.getElementById('pass2').value;
+        if (pass1.length > 0 && pass2.length > 0) {
+            if (pass1 != pass2) {
+                alert("not pass");
+            }
+        }
+    }
+
+</script>
+
+
+<form id='myform' action="test.php" onclick="return goback()"
+    enctype = "multipart/form-data" method='port'>
+    account : <input type="text" id='account' /> <br>
+    pass1 : <input type="password" id='pass1' onblur="checkpass()" /> <br>
+    pass2 : <input type="password" id='pass2' onblur="checkpass()" /> <br>
+    tw id : <input type="text" id='twid' /> <br>
+    memo : <textarea id="memo"></textarea><br>
+    <input type="file" />
+    <input type="submit" value="OK" />
+
+
+
+</form>

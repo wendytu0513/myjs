@@ -1,0 +1,77 @@
+<script>
+//類別
+class bike {
+    constructor(speed){
+        console.log("new bike");
+        this.speed = speed;
+        this.name ='';
+    }
+    //一個類別只有有一個建構式
+    // constructor(speed,x){
+    //     console.log("new bike");
+    //     this.speed = speed;
+    //     this.name ='';
+    // }
+
+
+    upspeed(){
+        this.speed += 1.2;
+    }
+
+    static m1(){
+        console.log("bike mq");
+    }
+}
+
+//繼承
+//(1)裡面要呼叫super (2)要在this之前
+//父類別的實體存在,再去做修改
+class scooter extends bike{
+ constructor(speed,gear){
+     super(speed);
+     this.speed = speed
+     this.gear = gear
+ }
+ getgear(gear){
+     this.gear = gear;
+ }
+ upspeed(){
+     this.speed = this.speed*(this.gear + 1.2)
+ }
+}
+
+
+//不定個數 參數
+class brad{
+    constructor(...x){
+        console.log("OK");
+    }
+}
+
+
+
+let b1 = new bike(12);
+console.log(b1.speed);
+console.log(b1.name);
+
+let s1 = new scooter(12);
+console.log(s1.speed);
+console.log(s1.name);
+
+
+//instanceof 判斷物件實體
+//是否擁有該類別屬性和成員
+console.log(b1 instanceof bike);
+console.log(s1 instanceof bike);
+console.log(b1 instanceof scooter);
+console.log(s1 instanceof scooter);
+
+
+
+let brad1 = new brad();
+let brad2 = new brad(1);
+let brad3 = new brad(1,2);
+
+
+
+</script>

@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<script src="brad36_api.js"></script>
+
+<script>
+
+function shownow(){
+    let now = new Date();
+    let nowstring = now.getFullYear() + "-"+
+    (now.getMonth()+1) + "-" +
+    now.getDate() + " " +
+    //now.getWeek() + " " +
+    now.getHours() + ":" +
+    now.getMinutes() + ":" +
+    now.getSeconds();
+    document.getElementById('now').innerHTML = nowstring;
+}
+
+
+let a1 = 3.4;
+let a2 = 3;
+let a3 = 3.7;
+let a4 = -3.6;
+console.log(a1 + " : " + Math.floor(a1));
+console.log(a2 + " : " + Math.floor(a2));
+console.log(a3 + " : " + Math.floor(a3));
+console.log(a4 + " : " + Math.floor(a4));
+
+
+
+setInterval(shownow, 500);
+</script>
+
+<span id ='now'></span>

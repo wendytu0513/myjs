@@ -1,0 +1,45 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<h1 id="test1">brad big company</h1>
+<div id="cantainer">
+    <h1>i am h1</h1>
+    <p>p1</p>
+    <hr>
+    <h1>i am h2</h1>
+    <p>p1</p>
+
+</div>
+<script>
+    //$(selector)  => element(s)
+    // h1 $('h1'),a => $('a') => getElementByTag('a')
+    // id=test1 $('$test1') => getElementById('test')
+    // class=`group` => $('.group') => getElementByClass('group')
+    $('#test1').click(function () {
+        $('#test1').css('color', 'blue').css('background-color', 'red');
+
+        let ps = $('p');
+        for (let p of ps) {
+            p.style.color = 'blue';
+            p.style.backgroundColor ='yellow';
+        }
+        
+        $jobj = $(document.getElementById('container'));
+        $jobj.css('background-color', 'red');
+
+    });
+
+
+    let isclick = false;
+    $('#go').click(function(){
+        isclick = !isclick;
+        $(this).attr('disbled' , isclick);
+        setTimeout(toclick, 3*1000);
+        $('.inputText').val('Hello World');
+    });
+
+    function toclick(){
+        isclick = false;
+        $('#go').attr('disbled' , isclick);
+    }
+
+
+</script>

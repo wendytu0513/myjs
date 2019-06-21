@@ -1,0 +1,28 @@
+<script>
+    let delay = 3000, i = 1;
+
+    //越來越快
+    function dothing() {
+        if (delay <= 10) {
+            dothing2
+            return;
+        }
+        console.log(i++);
+        setTimeout(dothing, delay);
+        delay -= delay / 2;
+    }
+
+        //越來越慢
+        function dothing2() {
+        if (delay >= 3000) {
+            return;
+        }
+        console.log(i--);
+        setTimeout(dothing2, delay);
+        delay *= 1.5;
+    }
+
+    dothing();
+
+
+</script>

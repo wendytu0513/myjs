@@ -1,0 +1,18 @@
+<script>
+    //屬性會先初始化
+    let bike = function () {
+        console.log("bike");
+        this.name = name;
+        this.speed = speed;
+    }
+    bike.chspeed = function (speed) {
+        this.speed = speed;
+        console.log("bike chspeed")
+    }
+
+    bike.prototype.chspeed = function(speed){
+        console.log("prototype chspeed")
+    }
+    
+
+</script>
