@@ -1,0 +1,78 @@
+
+    <table id="mytable" border="2" width="80%" height="60%" style="border-collapse: collapse" >
+    <hr>
+    <button onclick="start()" style="width: 20%; height: 15%;background-color: tomato ;font-size: 30px" >start</button>  
+    <hr>
+    
+
+    <script>
+        let prize = ['1000', '1000', '1000', '1000', '2000', '2000', '3000', '5000', '加油', '加油'];
+        for (let k = 0; k < 5; k++) {
+            players = [[], [], [], [], []];
+            document.write(`<tr  style="text-align: center">`);
+            for (let i = 0; i < 5; i++) {
+                let rand = parseInt(Math.random() * 10)
+                //檢查是否重複
+                let isrepeat = false;
+                for (let j = 0; j < i; j++) {
+                    if (players[k][j] == rand) {
+                        //重複了
+                        isrepeat = true;
+                        break;
+                    }
+                }
+                if (isrepeat) {
+                    i--;
+                    continue;
+                }
+                players[k][i] = prize[rand];
+                document.write(`<td style="font-size: 25px" >  ${players[k][i]}  </td>`);
+            }
+            document.write(`</tr>`);
+            console.log(players[k]);
+        }
+
+
+
+
+        let delay = 3000, i = 1;
+        //越來越快
+        function start() {
+            let a = parseInt(Math.random() * 4);
+            let b = parseInt(Math.random() * 4);
+            if (delay <= 10) {
+                slow()
+                return;
+            }
+            document.getElementById("mytable").rows[a].cells[b].style.backgroundColor = "lightblue";
+            setTimeout(refresh, delay - 100);
+            setTimeout(start, delay);
+            delay -= delay / 4;
+        }
+
+        //越來越慢
+        function slow() {
+            let a = parseInt(Math.random() * 4);
+            let b = parseInt(Math.random() * 4);
+            if (delay >= 3000) {
+                let result = document.getElementById("mytable").rows[a].cells[b];
+                result.style.backgroundColor = "lightblue";
+                return;
+            }
+            document.getElementById("mytable").rows[a].cells[b].style.backgroundColor = "lightblue";
+            setTimeout(refresh, delay - 100);
+            setTimeout(slow, delay);
+            delay *= 1.5;
+        }
+
+        //清空
+        function refresh() {
+            for (m = 0; m < 5; m++) {
+                for (n = 0; n < 5; n++) {
+                 document.getElementById("mytable").rows[m].cells[n].style.backgroundColor = "white";;
+                }
+            }
+            console.log("OK")
+        }
+
+    </script>
